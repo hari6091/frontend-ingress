@@ -25,9 +25,11 @@
   </div>
 
   <script>
+    const API_ENDPOINT = 'http://api.production.192.168.18.16.nip.io';
+
     async function getAllNumbers() {
       try {
-        const response = await fetch("/api/values/all");
+        const response = await fetch(`${API_ENDPOINT}/values/all`);
         const data = await response.json();
         const valuesContainer = document.getElementById('valuesContainer');
         valuesContainer.innerHTML = data.rows.map((row) => `<div class="value">${row.number}</div>`).join('');
@@ -39,7 +41,7 @@
     async function saveNumber() {
       try {
         const value = document.getElementById('valueInput').value;
-        await fetch("/api/values", {
+        await fetch(`${API_ENDPOINT}/values`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
