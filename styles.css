@@ -43,8 +43,10 @@ button:hover {
 .value {
   padding: 8px;
   margin: 5px;
+  border: 1px solid #000222;
   background-color: #eee;
   border-radius: 4px;
+  margin-top: 12px;
 }
 
 .form {
